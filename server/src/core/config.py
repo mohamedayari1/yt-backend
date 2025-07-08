@@ -21,18 +21,17 @@ class Settings(BaseSettings):
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore",
-        missing="ignore",
     )
 
 class LLMSettings(Settings):
-    AZURE_OPENAI_API_KEY: str
-    AZURE_OPENAI_ENDPOINT: str
+    AZURE_OPENAI_API_KEY: str = "3man7CXIzMCS6XzhjWxWeGVtdJA3LK5lmjMTDOUUXuWHqA01dBI0JQQJ99BFACPV0roXJ3w3AAABACOGNDHF"
+    AZURE_OPENAI_ENDPOINT: str = "https://law-llm.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2025-01-01-preview"
     AZURE_OPENAI_API_VERSION: str = "2025-01-01-preview"
 
 
 class AzureEmbeddingsSettings(Settings):
-    AZURE_EMBDEDDINGS_API_KEY: str
-    AZURE_EMBDEDDINGS_ENDPOINT: str
+    AZURE_EMBDEDDINGS_API_KEY: str = "3man7CXIzMCS6XzhjWxWeGVtdJA3LK5lmjMTDOUUXuWHqA01dBI0JQQJ99BFACPV0roXJ3w3AAABACOGNDHF"
+    AZURE_EMBDEDDINGS_ENDPOINT: str = "https://law-llm.openai.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-05-15"
     AZURE_EMBDEDDINGS_API_VERSION: str = "2023-05-15"
     AZURE_EMBDEDDINGS_DEPLOYMENT: str = "text-embedding-3-large"
 
@@ -71,6 +70,7 @@ class MonogoVectorSettings:
     )
     LABOR_LAW_COLLECTION_NAME: Optional[str] = "youtube_transcripts_vectors"
     IMMIGRATION_LAW_COLLECTION_NAME: Optional[str] = "new_IMMIGRATION_LAW_COLLECTION_NAME"
+    
 class QdrantSettings(Settings):
     USE_QDRANT_CLOUD: bool = False    
     QDRANT_DATABASE_HOST: str = "131.189.152.101"
